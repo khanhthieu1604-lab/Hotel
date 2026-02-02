@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Antigravity Theme - Uiverse Inspired */
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-float {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+    animation: floating 7s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.animate-float-delay-2 {
+    animation: floating 5s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+}
+
+/* Antigravity Card */
+.antigravity-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+}
+
+.antigravity-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px 0 rgba(31, 38, 135, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Glowing Button */
+.uiverse-btn {
+    background: linear-gradient(45deg, #FF3D77, #338AFF, #8E2DE2);
+    background-size: 200% auto;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.45);
+}
+
+.uiverse-btn:hover {
+    background-position: right center;
+    box-shadow: 0 8px 25px 0 rgba(126, 52, 161, 0.65);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Dark Mode */
+.dark .antigravity-card {
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}

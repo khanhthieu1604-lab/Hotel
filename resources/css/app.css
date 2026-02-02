@@ -2,23 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Antigravity Theme - Uiverse Inspired */
+/* Corporate/Professional Theme */
 
-@keyframes floating {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(1deg);
-    }
-
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-}
-
-@keyframes fade-in-up {
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -30,62 +16,114 @@
     }
 }
 
-.animate-float {
-    animation: floating 6s ease-in-out infinite;
-}
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
 
-.animate-float-delay-1 {
-    animation: floating 7s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-.animate-float-delay-2 {
-    animation: floating 5s ease-in-out infinite;
-    animation-delay: 2s;
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out;
+    animation: fadeInUp 0.6s ease-out;
 }
 
-/* Antigravity Card */
-.antigravity-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform-style: preserve-3d;
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
 }
 
-.antigravity-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px 0 rgba(31, 38, 135, 0.2);
-    border-color: rgba(255, 255, 255, 0.8);
+/* Corporate Card */
+.corporate-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
-/* Glowing Button */
-.uiverse-btn {
-    background: linear-gradient(45deg, #FF3D77, #338AFF, #8E2DE2);
-    background-size: 200% auto;
+.corporate-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.dark .corporate-card {
+    background: rgba(30, 41, 59, 0.9);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Corporate Button */
+.corporate-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     color: white;
-    font-weight: 700;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.3);
+}
+
+.corporate-btn:hover {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.4);
+    transform: translateY(-1px);
+}
+
+.corporate-btn-outline {
+    background: transparent;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.corporate-btn-outline:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.dark .corporate-btn-outline {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+.dark .corporate-btn-outline:hover {
+    background: #60a5fa;
+    color: #1e293b;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.5s;
-    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.45);
+    letter-spacing: 0.05em;
 }
 
-.uiverse-btn:hover {
-    background-position: right center;
-    box-shadow: 0 8px 25px 0 rgba(126, 52, 161, 0.65);
-    transform: translateY(-2px) scale(1.05);
+/* Section Divider */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
 }
 
-/* Dark Mode */
-.dark .antigravity-card {
-    background: rgba(17, 24, 39, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+/* Trust Indicators */
+.trust-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 3px solid #3b82f6;
+    border-radius: 0.25rem;
+}
+
+.dark .trust-indicator {
+    background: rgba(96, 165, 250, 0.1);
+    border-left-color: #60a5fa;
 }
